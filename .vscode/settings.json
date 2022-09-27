@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "deployment/": true,
+    "nginx/": true,
+    "node_modules": true,
+    "tslint.json": true,
+    "bitbucket-pipelines.yml": true,
+    "docker-compose.develop.yml": true,
+    "Dockerfile.develop": true,
+    "ecosystem-pre.config.js": true,
+    ".eslintrc": true,
+    ".nvmrc": true,
+    "wait-for-it.sh": true,
+    ".prettierrc": true,
+    "src/error": true,
+    "src/database/": true,
+    // "src/scripts": true,
+    "yarn.lock": true,
+    "tsconfig.json": true,
+  }
+}

@@ -1,0 +1,16 @@
+FROM node:14
+
+WORKDIR /src/app/server-pre
+
+RUN yarn global add nodemon ts-node eslint typescript jest ts-jest pm2
+
+COPY package*.json ./
+
+RUN yarn install
+
+COPY . .
+
+COPY wait-for-it.sh wait-for-it.sh
+RUN chmod 777 wait-for-it.sh
+
+EXPOSE 8085

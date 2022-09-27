@@ -1,0 +1,20 @@
+version: '3.2'
+services:
+  server-pre:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.develop
+    command: ["pm2-runtime", "start", "ecosystem-pre.config.js"]
+    volumes:
+      - ./pm2-logs:/src/app/server-pre/pm2-logs
+    ports:
+      - "127.0.0.1:8054:8054"
+    container_name: at-loyalty-pre
+  nginx:
+    restart: always
+    image: nginx
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx/
+    network_mode: "host"
